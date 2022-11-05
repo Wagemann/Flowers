@@ -15,10 +15,11 @@ function Nav() {
               Resources
             </a>
             <ul className="dropdown-menu">
-              <li><a  className="dropdown-item" aria-current="page" href="https://www.google.com/" >Google</a></li>
+              <li><a  className="dropdown-item" aria-current="page" href="https://jsonplaceholder.typicode.com/guide/" >Typicode Guide</a></li>
               <li><a  className="dropdown-item" aria-current="page" href="https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/lecture/18125177?start=660#questions">Udemy</a></li>
               <li><a  className="dropdown-item" aria-current="page" href="https://stackoverflow.com/" >Stack Overflow</a></li>
               <li><a  className="dropdown-item" aria-current="page" href="https://www.youtube.com/" >Youtube</a></li>
+              <li><a  className="dropdown-item" aria-current="page" href="https://www.google.com/" >Google</a></li>
               <li><a  className="dropdown-item" aria-current="page" href="https://www.hackreactor.com/" >Hack Reactor</a></li>
             </ul>
           </li>
