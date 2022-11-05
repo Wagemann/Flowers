@@ -12,6 +12,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 let data = []
+console.log(data)
 
 function callExternalApi(){
     const url = "https://jsonplaceholder.typicode.com/posts"
@@ -23,7 +24,7 @@ function callExternalApi(){
     })
 }
 
-app.get("/api/v1/data", async(req,res)=>{
+app.get("/api/v1/data/", async(req,res)=>{
     res.send(data)
 })
 
