@@ -1,4 +1,18 @@
-# Flowers 
+# Flowers
+
+Create a multi component React/Redux/Node app to process results from a REST service.
+
+Backend (Node Express Server)
+
+Frontend (React/Redux SPA)
+
+## Nick Wagemann
+
+* [API Design](Docs/api.md)
+* [GHI Design](Docs/ghi.md)
+* [Technologies](Docs/technologies.md)
+
+
 
 Fork the Project
 
