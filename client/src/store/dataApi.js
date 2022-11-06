@@ -7,9 +7,18 @@ export const dataApi = createApi({
     }),
     endpoints: builder =>({
         getData: builder.query({
-            query:() => '/api/v1/data/'
+            query:() => '/api/v1/data/',
+            providesTags: ['DataList'],
         }),
+        updateData: builder.mutation({
+            query: (id, data) =>({
+                url: `/api/v1/data/${id}`,
+                body: data,
+                method: 'patch',
+            }),
+            invalidatesTags: ["DataList"],
+        })
     }),
 });
 
-export const { useGetDataQuery } = dataApi;
+export const { useGetDataQuery, useUpdateDataMutation, } = dataApi;

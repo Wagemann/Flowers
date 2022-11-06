@@ -42,7 +42,7 @@ app.post("/api/v1/data/", (req,res)=>{
     .then((json) => res.send(json));
 })
 
-app.put("/api/v1/data/:id", (req,res)=>{
+app.patch("/api/v1/data/:id", (req,res)=>{
     const id = req.params.id;
     fetch( url + "/" + id , {
         method: 'PUT',

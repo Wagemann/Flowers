@@ -1,5 +1,5 @@
 import React, { useState} from "react";
-import { useGetDataQuery } from "../store/dataApi";
+import { Link } from "react-router-dom"
 import Card from './Card'
 
 
@@ -28,8 +28,8 @@ function SearchBar({placeholder, data}){
                 </div>
                 { FilteredData.length != 0 && (
                 <div className="dataResult">
-                    {FilteredData.slice(0,10).map((value, key)=>{
-                        return <div><p className="dataItem">{value.title}</p></div>
+                    {FilteredData.slice(0,10).map((value)=>{
+                        return <div key={value.id}><p className="dataItem">{value.title}</p></div>
                         
                     })}
 
@@ -40,11 +40,13 @@ function SearchBar({placeholder, data}){
                 {FilteredData.map(d=>{
                     return(
                         <div key={d.id} className="col">
+                        <Link style={{textDecoration: 'none' }} to ={`/update/${d.id}`}>
                             <Card
                             id={d.id}
                             title={d.title}
                             body={d.body}
                             />
+                            </Link>
                         </div>
                     )
                 })}

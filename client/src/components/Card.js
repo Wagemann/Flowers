@@ -11,7 +11,6 @@ export default function Card(props) {
               <h5 className="card-id">ID: {props.id}</h5>
                 <h5 className="card-title">Title: {props.title}</h5>
               <div className="card-body">Body: {props.body}</div>
-              <button>Edit</button>
             </div>
           </div>
         </div>
