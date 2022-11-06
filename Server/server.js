@@ -69,6 +69,18 @@ app.delete("/api/v1/data/:id", (req,res)=>{
     res.send({})
 });
 
+// Original idea for how to get all the data then store it in an array
+// function callExternalApi(){
+//   const url = "https://jsonplaceholder.typicode.com/posts"
+//   fetch(url)
+//   .then((res)=>{res.json()
+//   .then((backendData)=>{
+//     data = backendData
+//     })
+//   })
+// }
+
 app.listen(4000, ()=>{
     console.log(`Server is running on ${PORT}`)
+    // callExternalApi()
 })

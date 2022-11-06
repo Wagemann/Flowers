@@ -1,8 +1,9 @@
 import { NavLink } from 'react-router-dom';
+import flowers from './images/flowers.png'
 
 function Nav() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-success">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
         <NavLink className="navbar-brand" to="/">Nick Wagemann Assesment</NavLink>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,6 +28,7 @@ function Nav() {
           </li>
           </ul>
         </div>
+        <img className='me-4' src={flowers} alt="1800Flowers"></img>
       </div>
     </nav>
   )
