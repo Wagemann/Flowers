@@ -6,14 +6,6 @@ import { store } from './store/store'
 import { Provider } from 'react-redux'
 import reportWebVitals from './reportWebVitals';
 
-console.log("initial store",store.getState())
-
-const unsubscribe = store.subscribe(()=>
-    console.log('State after Dispatch: ', store.getState())
-)
-
-store.dispatch({type:"data/titleEdited", payload:"data edited"})
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -23,7 +15,6 @@ root.render(
   </React.StrictMode>
 );
 
-unsubscribe();
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

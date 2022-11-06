@@ -6,7 +6,7 @@ function BootstrapInput(props) {
     const { id, placeholder, labelText, value, onChange, type } = props
   
     return(
-      <div className="form-group">
+      <div className="form-group m-2">
         <label htmlFor={id} className="form-label">{labelText}</label>
         <input value={value} onChange={onChange} required type={type} className="form-control" id={id} placeholder={placeholder}/>
       </div>
@@ -21,7 +21,6 @@ function UpdateForm(_props){
     const url = 'http://localhost:4000/api/vi/data/:id'
     const [title, setTitle] = useState('')
     const [body, setBody] = useState('')
-    const [userId, setUserId] = useState('')
     const [error, setError] = useState('')
     const [isPending, setIsPending] = useState(false)
      
