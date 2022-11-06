@@ -26,7 +26,7 @@ function SearchBar({placeholder, data}){
             <div className="searchInputs">
                 <input type="text" placeholder={placeholder} onChange={handleFilter} />
                 </div>
-                { FilteredData.length != 0 && (
+                {/* { FilteredData.length != 0 && (
                 <div className="dataResult">
                     {FilteredData.slice(0,10).map((value)=>{
                         return <div key={value.id}><p className="dataItem">{value.title}</p></div>
@@ -35,7 +35,7 @@ function SearchBar({placeholder, data}){
 
                 </div>
 
-                )}
+                )} */}
             <div className="row">
                 {FilteredData.map(d=>{
                     return(

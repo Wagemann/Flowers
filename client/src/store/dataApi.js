@@ -11,10 +11,10 @@ export const dataApi = createApi({
             providesTags: ['DataList'],
         }),
         updateData: builder.mutation({
-            query: (id, data) =>({
+            query: (id, ...patch) =>({
                 url: `/api/v1/data/${id}`,
-                body: data,
-                method: 'patch',
+                method: 'PATCH',
+                body: patch,
             }),
             invalidatesTags: ["DataList"],
         })

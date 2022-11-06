@@ -6,7 +6,7 @@ function BootstrapInput(props) {
     const { id, placeholder, labelText, value, onChange, type } = props
   
     return(
-      <div className="mb-3">
+      <div className="form-group">
         <label htmlFor={id} className="form-label">{labelText}</label>
         <input value={value} onChange={onChange} required type={type} className="form-control" id={id} placeholder={placeholder}/>
       </div>
@@ -28,7 +28,7 @@ function UpdateForm(_props){
 
     async function handleSubmit(e){
         e.preventDefault();
-        updateData({title, body, userId});
+        updateData({title, body});
 
         if (result.isSuccess){
             navigate("/");
@@ -51,13 +51,6 @@ function UpdateForm(_props){
                 labelText="body"
                 value={body}
                 onChange={e => setBody(e.target.value)}
-                type="text"/>
-              <BootstrapInput
-                id="userId"
-                placeholder="User Id"
-                labelText="user id"
-                value={userId}
-                onChange={e => setUserId(e.target.value)}
                 type="text"/>
               { !isPending && <button 
                 className='form-field'

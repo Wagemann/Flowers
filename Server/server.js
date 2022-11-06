@@ -45,7 +45,8 @@ app.post("/api/v1/data/", (req,res)=>{
 app.patch("/api/v1/data/:id", (req,res)=>{
     const id = req.params.id;
     fetch( url + "/" + id , {
-        method: 'PUT',
+        mode: 'no-cors',
+        method: 'PATCH',
         body: JSON.stringify({
           id: (req.body.id),
           title: (req.body.title),
