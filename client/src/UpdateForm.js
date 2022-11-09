@@ -20,7 +20,7 @@ function UpdateForm(_props){
   let {id} = useParams();
   const dispatch = useDispatch();
   const navigate = useNavigate()
-  const [isPending, setIsPending] = useState(false)
+  const [isPending] = useState(false)
   const { dataItems } = useSelector((state) => state.dataCart);
   
 

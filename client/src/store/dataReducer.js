@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-// Taking that data storing and giving functunality to manipulate
+
 const initialState = {dataItems: []}
 
 export const dataSlice = createSlice({

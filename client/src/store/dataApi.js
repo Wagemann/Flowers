@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-//Getting all the data
+
 export const dataApi = createApi({
     reducerPath: 'data',
     baseQuery: fetchBaseQuery({
