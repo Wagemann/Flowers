@@ -1,6 +1,7 @@
 import { React, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom"
-import { useUpdateDataMutation } from "./store/dataApi"
+import { updateTitleAndBody } from "./store/dataReducer";
+import { useNavigate, useParams } from "react-router-dom"
+import { useDispatch, useSelector } from "react-redux";
 
 function BootstrapInput(props) {
     const { id, placeholder, labelText, value, onChange, type } = props
@@ -14,40 +15,40 @@ function BootstrapInput(props) {
   }
 
 function UpdateForm(_props){
+  
 
-    const [updateData, result] = useUpdateDataMutation();
-    const navigate = useNavigate()
-    const {id} = useParams();
-    const url = 'http://localhost:4000/api/vi/data/:id'
-    const [title, setTitle] = useState('')
-    const [body, setBody] = useState('')
-    const [error, setError] = useState('')
-    const [isPending, setIsPending] = useState(false)
-     
+  let {id} = useParams();
+  const dispatch = useDispatch();
+  const navigate = useNavigate()
+  const [isPending, setIsPending] = useState(false)
+  const { dataItems } = useSelector((state) => state.dataCart);
+  
+
+  
+  let dataItem = dataItems[id - 1]
+  const [title, setTitle] = useState(dataItem.title);
+  const [body, setBody] = useState(dataItem.body); 
 
     async function handleSubmit(e){
         e.preventDefault();
-        updateData({title, body});
-
-        if (result.isSuccess){
-            navigate("/");
-        } else if (result.isError) {
-            setError(result.error)
-        }
+        let updatedData = {"index": id - 1,  "updatedTitle": title, "updatedBody": body}
+        dispatch(updateTitleAndBody(updatedData));
+        navigate("/");
     }
+
     return (
-            <form onSubmit={handleSubmit} action={url} >
+            <form onSubmit={handleSubmit} >
               <BootstrapInput
                 id="title"
                 placeholder="Title of Post"
-                labelText="title"
+                labelText="Title"
                 value={title}
                 onChange={e => setTitle(e.target.value)}
                 type="text"/>
               <BootstrapInput
                 id="body"
                 placeholder="Body of post"
-                labelText="body"
+                labelText="Body"
                 value={body}
                 onChange={e => setBody(e.target.value)}
                 type="text"/>

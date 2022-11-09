@@ -3,7 +3,6 @@ import { Link } from "react-router-dom"
 import Card from './Card'
 
 
-
 function SearchBar({placeholder, data}){
 
     const [FilteredData, setFilteredData] = useState([]);
@@ -40,7 +39,7 @@ function SearchBar({placeholder, data}){
                 {FilteredData.map(d=>{
                     return(
                         <div key={d.id} className="col">
-                        <Link style={{textDecoration: 'none' }} to ={`/update/${d.id}`}>
+                        <Link style={{textDecoration: 'none' }} to ={`/update/${d.id}/`}>
                             <Card
                             id={d.id}
                             title={d.title}

@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-
+//Getting all the data
 export const dataApi = createApi({
     reducerPath: 'data',
     baseQuery: fetchBaseQuery({
@@ -10,15 +10,7 @@ export const dataApi = createApi({
             query:() => '/api/v1/data/',
             providesTags: ['DataList'],
         }),
-        updateData: builder.mutation({
-            query: (id, ...patch) =>({
-                url: `/api/v1/data/${id}`,
-                method: 'PATCH',
-                body: patch,
-            }),
-            invalidatesTags: ["DataList"],
-        })
     }),
 });
 
-export const { useGetDataQuery, useUpdateDataMutation, } = dataApi;
+export const { useGetDataQuery } = dataApi;
